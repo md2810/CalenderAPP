@@ -1,5 +1,4 @@
-ios-native:
-  workflows:
+workflows:
     sample-workflow:
         name: Codemagic Sample Workflow
         max_build_duration: 120
