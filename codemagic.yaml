@@ -1,16 +1,17 @@
-ios-native:
-  environment:
-    vars:
-      BUNDLE_ID: "io.codemagic.mdcalendar.iosnative"
-      XCODE_PROJECT: "CodemagicSample.xcworkspace"
-scripts:
-  # ...
-  - name: Build ipa for distribution
-    script: | 
-      xcode-project build-ipa \
-        --project "Calendar.xcodeproj"
-artifacts:
-  - build/ios/ipa/*.ipa
-  - /tmp/xcodebuild_logs/*.log
-  - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
-  - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+workflows:
+  ios-native:
+    environment:
+      vars:
+        BUNDLE_ID: "io.codemagic.mdcalendar.iosnative"
+        XCODE_PROJECT: "CodemagicSample.xcworkspace"
+  scripts:
+    # ...
+    - name: Build ipa for distribution
+      script: | 
+        xcode-project build-ipa \
+          --project "Calendar.xcodeproj"
+  artifacts:
+    - build/ios/ipa/*.ipa
+    - /tmp/xcodebuild_logs/*.log
+    - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+    - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
