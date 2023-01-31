@@ -6,7 +6,6 @@ instance_type: mac_mini_m1
 environment:
 vars:
 BUNDLE_ID: "com.md.calenderapp"
-name: Build ipa for distribution
 script: | 
 xcode-project build-ipa \
 --project "Calendar.xcodeproj" \
