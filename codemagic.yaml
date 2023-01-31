@@ -2,7 +2,7 @@ ios-native:
   environment:
     vars:
       BUNDLE_ID: "com.md.calenderapp"
-  - name: Build ipa for distribution
+    name: Build ipa for distribution
     script: | 
       xcode-project build-ipa \
         --workspace "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
